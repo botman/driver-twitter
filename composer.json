@@ -1,0 +1,50 @@
+{
+    "name": "botman/driver-twitter",
+    "license": "MIT",
+    "description": "Twitter driver for BotMan",
+    "keywords": [
+        "Bot",
+        "BotMan",
+        "Twitter"
+    ],
+    "homepage": "http://github.com/botman/driver-twitter",
+    "authors": [
+        {
+            "name": "Marcel Pociot",
+            "email": "m.pociot@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "botman/botman": "~2.0",
+        "abraham/twitteroauth": "dev-json-post"
+    },
+    "require-dev": {
+        "botman/studio-addons": "~1.0",
+        "illuminate/contracts": "~5.5.0",
+        "phpunit/phpunit": "~5.0",
+        "mockery/mockery": "dev-master",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "BotMan\\Drivers\\Twitter\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "cs": "php-cs-fixer fix"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BotMan\\Drivers\\Twitter\\Providers\\TwitterServiceProvider"
+            ]
+        }
+    }
+}

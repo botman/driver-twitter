@@ -1,0 +1,11 @@
+{
+    "botman/driver-config": [
+        "stubs/twitter.php"
+    ],
+    "botman/driver": [
+        "BotMan\\Drivers\\Twitter\\TwitterDriver"
+    ],
+    "botman/commands": [
+        "BotMan\\Drivers\\Twitter\\Console\\Commands\\TwitterRegisterCommand"
+    ]
+}
