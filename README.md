@@ -9,7 +9,8 @@ BotMan driver to connect Twitter with [BotMan](https://github.com/botman/botman)
 ## Notes
 
 This library currently uses a non-stable version of the [twitteroauth](https://github.com/abraham/twitteroauth) library.
-When the []JSON POST bodies PR](https://github.com/abraham/twitteroauth/pull/581) gets merged, we can hopefully move to a stable version.  
+
+When the [JSON POST bodies PR](https://github.com/abraham/twitteroauth/pull/581) gets merged, we can hopefully move to a stable version.  
 
 ## Contributing
 
