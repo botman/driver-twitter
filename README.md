@@ -6,12 +6,6 @@ BotMan driver to connect Twitter with [BotMan](https://github.com/botman/botman)
 [![Build Status](https://travis-ci.org/botman/driver-twitter.svg?branch=master)](https://travis-ci.org/botman/driver-twitter)
 [![codecov](https://codecov.io/gh/botman/driver-twitter/branch/master/graph/badge.svg)](https://codecov.io/gh/botman/driver-twitter)
 
-## Notes
-
-This library currently uses a non-stable version of the [twitteroauth](https://github.com/abraham/twitteroauth) library.
-
-When the [JSON POST bodies PR](https://github.com/abraham/twitteroauth/pull/581) gets merged, we can hopefully move to a stable version.  
-
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.

@@ -17,7 +17,7 @@
     "require": {
         "php": ">=7.0",
         "botman/botman": "~2.0",
-        "abraham/twitteroauth": "dev-json-post"
+        "abraham/twitteroauth": "^0.9.2"
     },
     "require-dev": {
         "botman/studio-addons": "~1.0",
