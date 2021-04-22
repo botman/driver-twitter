@@ -6,14 +6,16 @@ use Mockery as m;
 use BotMan\BotMan\Http\Curl;
 use PHPUnit_Framework_TestCase;
 use BotMan\Drivers\Twitter\TwitterDriver;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class TwitterDriverTest extends PHPUnit_Framework_TestCase
+class TwitterDriverTest extends TestCase
 {
     const TEST_SECRET = 'test';
+    const TEST_KEY = 'test';
 
-    public function tearDown()
+    protected function tearDown(): void
     {
         m::close();
     }
@@ -88,6 +90,7 @@ class TwitterDriverTest extends PHPUnit_Framework_TestCase
 
         return new TwitterDriver($request, [
             'twitter' => [
+                'consumer_key' => self::TEST_KEY,
                 'consumer_secret' => self::TEST_SECRET
             ]
         ], $htmlInterface);
@@ -103,7 +106,12 @@ class TwitterDriverTest extends PHPUnit_Framework_TestCase
 
         $request->headers->add(['x-twitter-webhooks-signature' => 'signature']);
 
-        return new TwitterDriver($request, [], $htmlInterface);
+        return new TwitterDriver($request, [
+            'twitter' => [
+                'consumer_key' => self::TEST_KEY,
+                'consumer_secret' => self::TEST_SECRET
+            ]
+        ], $htmlInterface);
     }
 
     /** @test */
