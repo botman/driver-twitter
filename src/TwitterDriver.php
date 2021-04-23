@@ -51,7 +51,6 @@ class TwitterDriver extends HttpDriver implements VerifiesService
     public function matchesRequest()
     {
         if (isset($this->headers['x-twitter-webhooks-signature'])) {
-
             $signature = $this->headers['x-twitter-webhooks-signature'][0];
             $hash = hash_hmac('sha256', json_encode($this->payload->all()), $this->config->get('consumer_secret'), true);
 
@@ -75,7 +74,7 @@ class TwitterDriver extends HttpDriver implements VerifiesService
                 $message = $event['message_create'];
 
                 return new IncomingMessage($message['message_data']['text'], $message['sender_id'], $message['target']['recipient_id'], $event);
-        })->toArray();
+            })->toArray();
     }
 
     /**
@@ -111,7 +110,7 @@ class TwitterDriver extends HttpDriver implements VerifiesService
         $payload = $message->getPayload();
         $answer = Answer::create($message->getText())->setMessage($message);
 
-        if(isset($payload['message_create']['message_data']['quick_reply_response']['metadata'])) {
+        if (isset($payload['message_create']['message_data']['quick_reply_response']['metadata'])) {
             $answer->setInteractiveReply(true);
             $answer->setValue($payload['message_create']['message_data']['quick_reply_response']['metadata']);
         }
